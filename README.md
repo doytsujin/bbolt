@@ -1,6 +1,8 @@
 # BBolt wrapper
 
-This package define utilities functions for Bolt 
+[![Build Status](https://travis-ci.com/lorenzodisidoro/bbolt.svg?branch=master)](https://travis-ci.com/lorenzodisidoro/bbolt)
+
+This package define utilities functions for Bolt 🍬
 
 ```golang
 // BBolt define instance
