@@ -10,6 +10,13 @@ This package define utilities functions for Bolt 🍬
 go get github.com/lorenzodisidoro/bbolt
 ```
 
+## Example
+Import `bbolt` package in your GO file
+```golang
+import "github.com/lorenzodisidoro/bbolt"
+```
+
+it define `BBolt` and `KeyValue` types
 ```golang
 // BBolt define instance
 type BBolt struct {
@@ -23,12 +30,6 @@ type KeyValue struct {
 	Key   []byte
 	Value []byte
 }
-```
-
-## Example
-Import `bbolt` package in your GO file
-```golang
-import "github.com/lorenzodisidoro/bbolt"
 ```
 
 ### New key-value store
@@ -63,5 +64,3 @@ if err != nil {
 
 fmt.Printf("I love %v", string(keyValue.Value))
 ```
-
-
