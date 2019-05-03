@@ -2,6 +2,12 @@
 
 This package define utilities functions for Bolt 
 
+## Install package
+
+```sh
+go get github.com/lorenzodisidoro/bbolt
+```
+
 ```golang
 // BBolt define instance
 type BBolt struct {
@@ -17,31 +23,36 @@ type KeyValue struct {
 }
 ```
 
-## Install package
-
-```sh
-go get github.com/lorenzodisidoro/bbolt
+## Example
+Import `bbolt` package in your GO file
+```golang
+import "github.com/lorenzodisidoro/bbolt"
 ```
 
-## Example
-
+### New key-value store
 ```golang
 dir, _ := os.Getwd()
 dbPath := dir + "/test.db"
 
-// new instance
+// new BBolt instance
 testBucket, err := bbolt.NewBBolt(dbPath, []byte("test_bucket"))
 if err != nil {
     log.Fatal(err)
 }
+```
 
+### Add new key-value or update
+```golang
 // put key/value into 'test_bucket'
 testKey := []byte("love")
 err = testBucket.Update(testKey, []byte("bitcoin"))
 if err != nil {
     log.Fatal(err)
 }
+```
 
+### Get by key
+```golang
 // get value by key
 keyValue, err := testBucket.GetBy(testKey)
 if err != nil {
