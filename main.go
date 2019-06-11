@@ -96,13 +96,15 @@ func (bb *BBolt) GetAll() ([]*KeyValue, error) {
 
 	bb.Storage.View(func(tx *bolt.Tx) error {
 		b := tx.Bucket([]byte(bb.BucketName))
-		c := b.Cursor()
-		for k, v := c.First(); k != nil; k, v = c.Next() {
-			keyVal := &KeyValue{}
-			keyVal.Key = k
-			keyVal.Value = v
+		if b != nil {
+			c := b.Cursor()
+			for k, v := c.First(); k != nil; k, v = c.Next() {
+				keyVal := &KeyValue{}
+				keyVal.Key = k
+				keyVal.Value = v
 
-			response = append(response, keyVal)
+				response = append(response, keyVal)
+			}
 		}
 
 		return nil
