@@ -2,7 +2,7 @@
 
 [![Build Status](https://travis-ci.com/lorenzodisidoro/bbolt.svg?branch=master)](https://travis-ci.com/lorenzodisidoro/bbolt)
 
-This package define utilities functions for Bolt 🍬
+This package define utilities functions for Bolt.
 
 ## Install package
 
@@ -10,7 +10,7 @@ This package define utilities functions for Bolt 🍬
 go get github.com/lorenzodisidoro/bbolt
 ```
 
-## Example
+## Usage
 Import `bbolt` package in your GO file
 ```golang
 import "github.com/lorenzodisidoro/bbolt"
